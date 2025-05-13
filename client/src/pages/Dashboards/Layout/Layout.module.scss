@@ -1,0 +1,36 @@
+@use '../../../styles/abstracts/colors' as *;
+
+
+.layout-container {
+  min-height: 100vh;
+  flex-direction: column;
+  display: flex;
+  margin: 1.5rem;
+  flex: 1 1 0;
+
+  //.main-content {
+  //  padding: 1.5rem;
+  //}
+
+  .nav-links.column-layout{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+
+    li {
+      color: var(--secondary-text);
+      cursor: pointer;
+      padding: 5px 10px;
+      transition: color 0.3s;
+
+      &.active {
+        color: var(--primary-text);
+        font-weight: bold;
+      }
+
+      &:hover {
+        color: var(--primary-text);
+      }
+    }
+  }
+}

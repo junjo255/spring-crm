@@ -1,0 +1,75 @@
+@use "../../../styles/abstracts/colors" as *;
+@use "../../../styles/abstracts/mixins" as *;
+
+.dashboard-container {
+  @include flex(column, space-between);
+  gap: 1.5rem;
+
+  .dashboard-row {
+    @include flex(row, space-between, stretch, wrap);
+    flex: 2 1 auto;
+    gap: 1.5rem;
+  }
+}
+
+.card__title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: $black;
+}
+
+.title {
+  font-size: 18px;
+  margin-bottom: 5px;
+  color: $black;
+}
+
+.total-sale {
+  font-size: 28px;
+  margin-bottom: 5px;
+  color: $dark-gray;
+
+}
+
+.info {
+  font-size: 14px;
+  color: gray;
+  margin-bottom: 15px;
+}
+
+.sales-boxes {
+  @include flex(row, space-between);
+
+  .box {
+    background: $light-gray;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    width: 30%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+
+    .amount {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .change {
+      font-size: 12px;
+      padding: 2px 5px;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 5px;
+
+      &.positive {
+        background: #e0f8e0;
+        color: green;
+      }
+
+      &.negative {
+        background: #f8e0e0;
+        color: red;
+      }
+    }
+  }
+}

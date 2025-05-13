@@ -1,0 +1,26 @@
+@use '../abstracts/colors' as *;
+@use '../abstracts/typography' as *;
+
+.button {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-family: $font-primary;
+  background-color: $light-gray;
+  color: white;
+  border-radius: 5px;
+  transition: background 0.3s;
+
+  &:hover {
+    background-color: $dark-gray;
+  }
+
+  &--secondary {
+    background-color: $dark-gray;
+  }
+
+  &--small {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+}

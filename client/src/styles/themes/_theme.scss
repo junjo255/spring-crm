@@ -1,0 +1,14 @@
+@use '../abstracts/colors' as *;
+
+[data-theme="light"] {
+  --main-background:  $light-gray;
+  --primary-text:     $black;
+  --secondary-text:   $dark-gray;
+}
+
+// todo
+[data-theme="dark"] {
+  --main-background:  $light-gray;
+  --primary-text:     $black;
+  --secondary-text:   $dark-gray;
+}

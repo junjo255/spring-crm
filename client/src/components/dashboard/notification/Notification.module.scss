@@ -1,0 +1,27 @@
+@use '../../../styles/abstracts/colors' as *;
+
+.container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  background-color: $light-gray;
+  padding: 5px 10px;
+  cursor: pointer;
+  overflow: hidden;
+  right: 0;
+  transform-origin: right center;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  fill: var(--secondary-text);
+  cursor: pointer;
+  transition: transform 0.3s, fill 0.3s;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}

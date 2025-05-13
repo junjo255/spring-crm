@@ -1,0 +1,15 @@
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+
+  img {
+    height: 100%;
+    border-style: none;
+    overflow: clip;
+  }
+}

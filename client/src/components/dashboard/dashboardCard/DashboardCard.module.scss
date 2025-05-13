@@ -1,0 +1,19 @@
+@use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/abstracts/colors' as *;
+
+.card {
+  @include card;
+}
+
+.card__title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: $black;
+}
+
+.card__description {
+  font-size: 14px;
+  color: $dark-gray;
+  margin-bottom: 15px;
+}

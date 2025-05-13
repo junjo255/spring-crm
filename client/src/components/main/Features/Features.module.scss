@@ -1,0 +1,113 @@
+@use '../../../styles/abstracts/colors' as *;
+@use '../../../styles/abstracts/mixins' as *;
+
+.section {
+  padding: 5rem 0;
+  background-color: $light-gray;
+
+  .container {
+    @extend .container;
+  }
+}
+
+.container {
+  max-width: 112rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  @media (min-width: 640px) {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.text-center {
+  @include text-center;
+}
+
+.title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: $gray-900;
+  margin-bottom: 1rem;
+
+  @media (min-width: 768px) {
+    font-size: 2.25rem;
+  }
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: $gray-600;
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.feature-card {
+  @include rounded-md;
+  background-color: $white;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s;
+
+  &:hover {
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.feature-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: $main-grey;
+  margin-bottom: 0.5rem;
+}
+
+.features-grid {
+  display: grid;
+  gap: 2rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.feature-description {
+  color: $secondary-grey-color;
+  font-size: 1rem;
+}
+
+.icon-wrapper {
+  margin-bottom: 1rem;
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+  color: $main-blue;
+}
+

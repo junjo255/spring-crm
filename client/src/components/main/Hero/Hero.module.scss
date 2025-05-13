@@ -1,0 +1,93 @@
+@use '../../../styles/abstracts/colors' as *;
+@use '../../../styles/abstracts/mixins' as *;
+@use '../../../styles/abstracts/typography' as *;
+@use 'sass:color';
+
+// Container with max-width and padding
+.container {
+  max-width: 112rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  @media (min-width: 640px) {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.hero-grid {
+  display: grid;
+  gap: 3rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  align-items: center;
+}
+
+//.hero-background {
+//  background: linear-gradient(
+//                  to right,
+//                  $main-blue,
+//                  $secondary-blue
+//  );
+//  padding-top: 8rem;
+//  padding-bottom: 5rem;
+//  border-radius: 0 0 100% 100% / 0% 0% 12em 12em;
+//}
+
+.hero-title {
+  @include hero-title;
+  margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: $light-gray;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  @media (min-width: 640px) {
+    flex-direction: row;
+  }
+}
+
+.hero-button {
+  @include button(
+                  $white,
+                  $main-blue,
+                  color.adjust($white, $lightness: 5%)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-button-secondary {
+  @include button(
+                  transparent,
+                  $white,
+                  rgba($white, 0.1)
+  );
+  border: 2px solid $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  margin-left: 0.5rem;
+}

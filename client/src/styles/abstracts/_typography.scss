@@ -1,0 +1,19 @@
+@use './colors' as colors;
+
+// Typography
+$font-primary: "Inter", sans-serif;
+$font-size-base: 14px;
+
+
+@mixin hero-title {
+  font-size: 2.25rem; // todo use $font-size-base
+  font-weight: bold;
+  color: colors.$light-gray;
+  margin-bottom: 1.5rem;
+
+  & {
+    @media (min-width: 768px) {
+      font-size: 3.75rem;
+    }
+  }
+}

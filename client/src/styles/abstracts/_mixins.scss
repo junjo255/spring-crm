@@ -1,0 +1,176 @@
+@use '../../styles/abstracts/colors' as *;
+
+@mixin flex(
+  $direction: row,
+  $justify: flex-start,
+  $align: stretch,
+  $wrap: nowrap
+) {
+  @include flexbox;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin breakpoint($point) {
+  @if $point == sm {
+    @media (max-width: 600px) { @content; }
+  } @else if $point == md {
+    @media (max-width: 900px) { @content; }
+  } @else if $point == lg {
+    @media (max-width: 1200px) { @content; }
+  }
+}
+
+@mixin button($bg-color, $text-color, $hover-bg-color) {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $hover-bg-color;
+  }
+}
+
+
+@mixin container() {
+  max-width: 112rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  & {
+    @media (min-width: 640px) {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+}
+
+@mixin dashboard-container {
+  @include flexbox;
+  border: 1px solid $white;
+  border-radius: 11px;
+  padding: 10px;
+  margin: 10px;
+  cursor: text;
+  min-height: 50px;
+
+  &.small {
+    width: 200px;
+  }
+
+  &.medium {
+    width: 400px;
+  }
+
+  &.large {
+    width: 600px;
+  }
+
+  // iPhone
+  @media screen and (max-width: 480px) {
+    width: 100%;
+  }
+
+  // iPad
+  @media screen and (max-width: 768px) and (min-width: 481px) {
+    width: 80%;
+  }
+
+  // Desktop
+  @media screen and (min-width: 769px) {
+    width: 60%;
+  }
+}
+
+
+@mixin card() {
+  @include flex(column, space-between);
+  background: $white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  flex-grow: 1;
+  min-width: 250px;
+  max-width: 100%;
+  min-height: 20rem;
+  width: auto;
+
+  &.size-sm {
+    flex: 1 1 32%;
+  }
+
+  &.size-md {
+    flex: 1 1 65%;
+  }
+
+  &.size-lg {
+    flex: 1 1 100%;
+  }
+
+  &.size-xl {
+    flex: 1 1 100%;
+  }
+}
+
+@mixin rounded-md {
+  border-radius: 0.375rem;
+}
+
+
+@mixin text-center {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+
+@mixin space-y($size, $reverse: 0) {
+  @include flexbox;
+  flex-direction: column;
+
+  & + .input-group {
+    margin-top: 1rem;
+  }
+}
+
+@mixin jc-flex-end {
+  justify-content: flex-end;
+}
+
+
+
+/* ============= Transitions ============== */
+
+@mixin transition($x1: 0.4, $y1: 0, $x2: 0.2, $y2: 1) {
+  transition-property: all;
+  transition-timing-function: cubic-bezier($x1, $y1, $x2, $y2);
+  transition-duration: 150ms;
+}
+
+
+/* ============= Cross-Browser Support ============== */
+
+@mixin flexbox {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
